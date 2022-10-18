@@ -1,14 +1,37 @@
 import React, { useEffect, useState } from "react";
 
 import "./color.css";
-const colors = ["red", "blue", "green", "black", "purple"];
+const colors = ["grey", "blue", "green", "black", "purple"];
 const Color = () => {
-  const [color, setColor] = useState("red");
+  const [orange, setOrange] = useState("red");
+  const [mango, setMango] = useState("red");
+  const [banana, setBanana] = useState("red");
+  const [cherry, setCherry] = useState("red");
+  const [apple, setApple] = useState("red");
   const [hide, setHide] = useState(false);
 
-  let handleChangeColor = () => {
+  let handleOrange = () => {
     let newColor = Math.floor(Math.random() * colors.length);
-    setColor(colors[newColor]);
+    setOrange(colors[newColor]);
+  };
+
+  let handleApple = () => {
+    let newColor = Math.floor(Math.random() * colors.length);
+    setApple(colors[newColor]);
+  };
+  let handleBanana = () => {
+    let newColor = Math.floor(Math.random() * colors.length);
+    setBanana(colors[newColor]);
+  };
+
+  let handleCherry = () => {
+    let newColor = Math.floor(Math.random() * colors.length);
+    setCherry(colors[newColor]);
+  };
+
+  let handleMango = () => {
+    let newColor = Math.floor(Math.random() * colors.length);
+    setMango(colors[newColor]);
   };
 
   const handleDelete = (event) => {
@@ -21,11 +44,11 @@ const Color = () => {
       <h1>Components</h1>
       <div className="card">
         <div className="fruit" id="apple">
-          <h5 style={{ color: color }}>Orange</h5>
+          <h5 style={{ color: orange }}>Orange</h5>
           <button
             className="change"
             onClick={() => {
-              handleChangeColor();
+              handleOrange();
             }}
           >
             Change Color
@@ -35,25 +58,11 @@ const Color = () => {
           </button>
         </div>
         <div className="fruit">
-          <h5 style={{ color: color }}>Apple</h5>
-          <button
-            onClick={() => {
-              handleChangeColor();
-            }}
-            className="change"
-          >
-            Change Color
-          </button>
-          <button className="delete" onClick={handleDelete}>
-            Delete Me
-          </button>
-        </div>
-        <div className="fruit">
-          <h5 style={{ color: color }}>Mango</h5>
+          <h5 style={{ color: apple }}>Apple</h5>
           <button
             className="change"
             onClick={() => {
-              handleChangeColor();
+              handleApple();
             }}
           >
             Change Color
@@ -63,11 +72,11 @@ const Color = () => {
           </button>
         </div>
         <div className="fruit">
-          <h5 style={{ color: color }}>Banana</h5>
+          <h5 style={{ color: mango }}>Mango</h5>
           <button
             className="change"
             onClick={() => {
-              handleChangeColor();
+              handleMango();
             }}
           >
             Change Color
@@ -77,11 +86,25 @@ const Color = () => {
           </button>
         </div>
         <div className="fruit">
-          <h5 style={{ color: color }}>Cherry</h5>
+          <h5 style={{ color: banana }}>Banana</h5>
           <button
             className="change"
             onClick={() => {
-              handleChangeColor();
+              handleBanana();
+            }}
+          >
+            Change Color
+          </button>
+          <button className="delete" onClick={handleDelete}>
+            Delete Me
+          </button>
+        </div>
+        <div className="fruit">
+          <h5 style={{ color: cherry }}>Cherry</h5>
+          <button
+            className="change"
+            onClick={() => {
+              handleCherry();
             }}
           >
             Change Color
